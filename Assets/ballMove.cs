@@ -5,7 +5,7 @@ using UnityEngine;
 public class ballMove : MonoBehaviour
 {
 
-    Vector2 direction = Vector2.zero;
+    public Vector2 direction = Vector2.zero;
     public float speed = 5.0f;
 
     // Start is called before the first frame update
