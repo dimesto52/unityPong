@@ -26,7 +26,7 @@ public class padMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Camera.main.transform.position;
+        //transform.position = Camera.main.transform.position;
         Vector3 d = Vector3.zero;
         if (side == playerSide.Left) d = Vector3.left;
         else d = Vector3.right;
@@ -38,16 +38,16 @@ public class padMove : MonoBehaviour
             (side == playerSide.Right && Input.GetKey(KeyCode.P))
             )
         {
-            if(transform.position.y < 4.5f)
-            transform.position += Vector3.up * Time.deltaTime* speed;
+            if (transform.position.y < Camera.main.orthographicSize)
+                transform.position += Vector3.up * Time.deltaTime * speed;
         }
         if (
             (side == playerSide.Left && Input.GetKey(KeyCode.Q)) ||
             (side == playerSide.Right && Input.GetKey(KeyCode.M))
             )
         {
-            if (transform.position.y > -4.5f)
-                transform.position += Vector3.down * Time.deltaTime*speed;
+            if (transform.position.y > -Camera.main.orthographicSize)
+                transform.position += Vector3.down * Time.deltaTime * speed;
         }
 
     }

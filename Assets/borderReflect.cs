@@ -24,6 +24,7 @@ public class borderReflect : MonoBehaviour
         Vector3 norm = collision.contacts[0].normal;
 
         ball.direction = Vector3.Reflect(dir, norm);
+        rumbleManager.b_data.Invoke(new bumpData((Vector2)(-norm)*0.5f, 25.0f, 0.5f));
     }
 
 }

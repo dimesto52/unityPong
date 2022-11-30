@@ -31,6 +31,7 @@ public class markPoint : MonoBehaviour
                 Score.instance.addRight();
 
             bm.reset();
+            rumbleManager.r_data.Invoke(new rumbleData(0.1f, 0.1f));
         }
     }
 }
