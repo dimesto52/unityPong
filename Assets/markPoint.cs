@@ -7,6 +7,8 @@ public class markPoint : MonoBehaviour
 
     public sideScore side = sideScore.left;
 
+    public randomSound sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class markPoint : MonoBehaviour
 
             bm.reset();
             rumbleManager.r_data.Invoke(new rumbleData(0.1f, 0.1f));
+
+            sound?.playSound();
         }
     }
 }

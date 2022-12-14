@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class borderReflect : MonoBehaviour
 {
+    public randomSound sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class borderReflect : MonoBehaviour
 
         ball.direction = Vector3.Reflect(dir, norm);
         rumbleManager.b_data.Invoke(new bumpData((Vector2)(-norm)*0.5f, 25.0f, 0.5f));
+
+        sound?.playSound();
     }
 
 }

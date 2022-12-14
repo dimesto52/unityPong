@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class padReflect : MonoBehaviour
 {
+    public randomSound sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class padReflect : MonoBehaviour
         ballMove ball = collision.gameObject.gameObject.GetComponent<ballMove>();
 
         ball.direction = (collision.gameObject.transform.position - transform.position).normalized;
+
+        sound?.playSound();
 
     }
 
